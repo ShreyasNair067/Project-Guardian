@@ -11,6 +11,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context="deakin.gopher.guardian.view.general.PatientListActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
     <ImageView
             android:id="@+id/patient_list_manu_button"
             android:layout_width="wrap_content"
