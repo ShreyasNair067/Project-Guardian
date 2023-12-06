@@ -1,5 +1,6 @@
 package deakin.gopher.guardian.model;
 
+
 public class Patient {
   String patientId;
   String address;
@@ -18,10 +19,17 @@ public class Patient {
   String gpId1;
   String gpId2;
 
+    private long lastExaminedTimestamp;
+
+    private boolean needsAssistance;
+    private PatientStatus status;
+
   public Patient(final String patientId, final String firstName, final String lastName) {
     this.patientId = patientId;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.status = PatientStatus.REQUIRES_ASSISTANCE;
+    this.needsAssistance = true;
   }
 
   // constructor for adding a patient
@@ -46,6 +54,8 @@ public class Patient {
     this.nokId2 = nokId2;
     this.gpId1 = gpId1;
     this.gpId2 = gpId2;
+    this.status = PatientStatus.REQUIRES_ASSISTANCE;
+    this.needsAssistance = true;
   }
 
   public String getPatientId() {
@@ -116,6 +126,37 @@ public class Patient {
     return this.westernAffairsNo;
   }
 
+    public PatientStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PatientStatus status) {
+        this.status = status;
+    }
+
+    public boolean getNeedsAssistance() {
+        return needsAssistance;
+    }
+
+    public void setNeedsAssistance(boolean needsAssistance) {
+        this.needsAssistance = needsAssistance;
+    }
+
+    public long getLastExaminedTimestamp() {
+        return lastExaminedTimestamp;
+    }
+
+    public void setLastExaminedTimestamp(long lastExaminedTimestamp) {
+        this.lastExaminedTimestamp = lastExaminedTimestamp;
+    }
+
+    public void examinePatient() {
+        if (PatientStatus.REQUIRES_ASSISTANCE == this.status) {
+            this.status = PatientStatus.NO_ASSISTANCE_REQUIRED;
+            this.needsAssistance = false;
+        }
+    }
+
   @Override
   public String toString() {
     return "Patient{"
@@ -149,7 +190,7 @@ public class Patient {
         + ", medicareNo='"
         + medicareNo
         + '\''
-        + ", westwenAffairesNo='"
+        + ", westernAffairNo='"
         + westernAffairsNo
         + '\''
         + ", nok_id1='"
@@ -163,6 +204,12 @@ public class Patient {
         + '\''
         + ", gp_id2='"
         + gpId2
+        + '\''
+        + ", status='"
+        + status
+        + '\''
+        + ", needsAssistance='"
+        + needsAssistance
         + '\''
         + '}';
   }
