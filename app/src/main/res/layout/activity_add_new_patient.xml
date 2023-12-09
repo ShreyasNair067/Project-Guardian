@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/off_white"
     tools:context="deakin.gopher.guardian.view.general.PatientListActivity">
 
     <LinearLayout
@@ -31,7 +32,7 @@
                 android:id="@+id/txtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:hint="@string/name"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -45,7 +46,7 @@
                 android:id="@+id/txtAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:hint="@string/address"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +60,7 @@
                 android:id="@+id/txtDoB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:hint="@string/date_of_birth"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +74,7 @@
                 android:id="@+id/txtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:hint="@string/phone"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/under_care_of"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +102,7 @@
                 android:id="@+id/urlPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:hint="@string/photo"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -115,7 +116,7 @@
                 android:id="@+id/txtMedicareNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/off_white"
                 android:hint="@string/medicare_no"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>

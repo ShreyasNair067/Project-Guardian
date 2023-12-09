@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/patient_list_backgroud"
+        android:background="@color/dark_blue"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,8 @@
         android:id="@+id/patient_list_menu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
         android:contentDescription="TODO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,20 +31,9 @@
 
 
     <ImageView
-            android:id="@+id/patient_list_head_image"
-            android:layout_width="54dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="94dp"
-            android:layout_marginTop="56dp"
-            android:contentDescription="TODO"
-            app:layout_constraintStart_toEndOf="@+id/patient_list_company_icon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_icon_small" />
-
-    <ImageView
             android:id="@+id/patient_list_company_icon"
-            android:layout_width="67dp"
-            android:layout_height="60dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="172dp"
             android:layout_marginTop="44dp"
             android:contentDescription="TODO"
@@ -99,7 +88,7 @@
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            app:cardCornerRadius="30dp"
+            app:cardCornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/patient_list_searchView">
 
@@ -128,7 +117,7 @@
                     android:layout_marginTop="9dp"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/patients_overview"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark_blue"
                     android:textSize="15sp" />
 
             <ImageView
@@ -138,7 +127,8 @@
                     android:layout_marginLeft="140dp"
                     android:layout_marginTop="5dp"
                     android:contentDescription="TODO"
-                    app:srcCompat="@drawable/right_vector"
+                    app:srcCompat="@drawable/right_arrow_2"
+                    app:tint = "@color/dark_blue"
                     tools:layout_editor_absoluteX="337dp"
                     tools:layout_editor_absoluteY="234dp" />
 

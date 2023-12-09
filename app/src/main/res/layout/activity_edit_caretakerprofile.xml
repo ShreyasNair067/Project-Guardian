@@ -21,7 +21,7 @@
             android:layout_height="210dp"
             android:layout_marginTop="-60dp"
             android:translationZ="-20dp"
-            app:cardBackgroundColor="@color/deep_blue"
+            app:cardBackgroundColor="@color/dark_blue"
             app:cardCornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

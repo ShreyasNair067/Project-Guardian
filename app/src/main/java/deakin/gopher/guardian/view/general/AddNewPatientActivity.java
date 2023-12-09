@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
+
 import com.google.firebase.database.FirebaseDatabase;
 import deakin.gopher.guardian.R;
 import java.util.HashMap;
@@ -18,6 +21,7 @@ public class AddNewPatientActivity extends BaseActivity {
   protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_add_new_patient);
+    getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.off_white));
 
     name = findViewById(R.id.txtName);
     address = findViewById(R.id.txtAddress);
