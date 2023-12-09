@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#051462">
+    android:background="@color/off_white">
 
 
     <ImageView
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
+        app:tint = "@color/deep_blue"
         android:src="@drawable/gopher_logo" />
 
     <TextView
@@ -23,8 +24,7 @@
         android:layout_marginTop="24dp"
         android:text="Welcome to Guardian Monitor"
         android:textSize="24sp"
-        android:textColor="#FFFFFF" />
-
+        android:textColor="@color/black" />
 
 
     <com.google.android.material.button.MaterialButton
@@ -35,7 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="GET STARTED"
-        android:textColor="@color/dark_blue"
-        app:backgroundTint="#69F0AE"
+        android:textColor="@color/white"
+        app:backgroundTint="#03100A"
         app:cornerRadius="30dp" />
 </RelativeLayout>

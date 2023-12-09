@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import deakin.gopher.guardian.R
 import deakin.gopher.guardian.view.general.BaseActivity
 
@@ -15,6 +16,7 @@ class EditCaretakerProfileActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_caretakerprofile)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.dark_blue)
 
         saveButton = findViewById(R.id.btnSave)
 

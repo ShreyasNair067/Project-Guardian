@@ -77,6 +77,7 @@ public class PatientListActivity extends BaseActivity {
     setContentView(R.layout.activity_patient_list);
     patient_list_recyclerView = findViewById(R.id.patient_list_recycleView);
     final ImageView addPatientIcon = findViewById(R.id.imageView62);
+    getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.dark_blue));
 
     final Button viewArchivedButton = findViewById(R.id.button_view_archived);
     viewArchivedButton.setOnClickListener(

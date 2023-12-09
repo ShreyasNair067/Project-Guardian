@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import deakin.gopher.guardian.R
 import deakin.gopher.guardian.view.general.BaseActivity
 import deakin.gopher.guardian.view.general.Homepage4caretaker
@@ -16,8 +17,12 @@ class CaretakerProfileActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_caretakerprofile)
 
+
+
         backButton = findViewById(R.id.backBtn)
         editButton = findViewById(R.id.editButton)
+
+
 
         backButton.setOnClickListener {
             val medicalDiagnosticsActivityIntent =

@@ -6,6 +6,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue"
     tools:context="deakin.gopher.guardian.view.general.PatientListActivity">
 
 
@@ -21,7 +22,7 @@
         android:layout_height="210dp"
         android:layout_marginTop="-60dp"
         android:translationZ="-20dp"
-        app:cardBackgroundColor="@color/dark_blue"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +53,7 @@
         android:layout_marginTop="100dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/caretaker_profile"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textFontWeight="700"
         android:textSize="20sp"
         android:translationZ="20dp"
@@ -69,6 +70,7 @@
         android:contentDescription="TODO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black"
         app:srcCompat="@drawable/edit_button" />
 
 
@@ -81,7 +83,8 @@
         android:contentDescription="TODO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/menu_button" />
+        app:srcCompat="@drawable/menu_button"
+        app:tint = "@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -95,123 +98,151 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white">
+
+
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="Name"
+                android:backgroundTint="@color/dark_blue"
+                android:text="Name"
+                android:textColor="@color/white"
                 android:inputType="text"
-                android:enabled="false"/>
+                android:focusedByDefault="true"
+                android:enabled="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white"
+            android:enabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="Address"
+                android:backgroundTint="@color/dark_blue"
+                android:text="Address"
+                android:textColor="@color/white"
                 android:inputType="text"
-                android:enabled="false"/>
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDoB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="@string/date_of_birth"
-                android:inputType="text"
-                android:enabled="false"/>
+                android:backgroundTint="@color/dark_blue"
+                android:text="@string/date_of_birth"
+                android:textColor="@color/white"
+                android:enabled="true"
+                android:inputType="text"/>
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="@string/phone"
-                android:inputType="text"
-                android:enabled="false"/>
+                android:backgroundTint="@color/dark_blue"
+                android:text="@string/phone"
+                android:textColor="@color/white"
+                android:enabled="true"
+                android:inputType="text"/>
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/white"
             android:layout_marginBottom="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtUnderCare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="@string/ward"
-                android:inputType="text"
-                android:enabled="false"/>
+                android:backgroundTint="@color/dark_blue"
+                android:textColor="@color/white"
+                android:text="@string/ward"
+                android:enabled="true"
+                android:inputType="text"/>
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/urlPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="@string/photo"
-                android:inputType="text"
-                android:enabled="false"/>
+                android:backgroundTint="@color/dark_blue"
+                android:textColor="@color/white"
+                android:text="@string/photo"
+                android:enabled="true"
+                android:inputType="text"/>
+               />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtMedicareNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="@string/medicare_no"
-                android:inputType="text"
-                android:enabled="false"/>
+                android:backgroundTint="@color/dark_blue"
+                android:textColor="@color/white"
+                android:enabled="true"
+                android:text="@string/medicare_no"
+                android:inputType="text"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEmegencyContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFFFF"
-                android:hint="Emergency Contact"
-                android:inputType="text"
-                android:enabled="false"/>
+                android:backgroundTint="@color/dark_blue"
+                android:textColor="@color/white"
+                android:enabled="true"
+                android:text="Emergency Contact"
+                android:inputType="text"/>
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
