@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,6 +24,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,14 +35,12 @@ import deakin.gopher.guardian.R;
 import deakin.gopher.guardian.adapter.PatientListAdapter;
 import deakin.gopher.guardian.model.Patient;
 import deakin.gopher.guardian.model.PatientStatus;
-import deakin.gopher.guardian.view.patient.careplan.CarePlanActivity;
 import java.util.Objects;
 
 public class PatientListActivity extends BaseActivity {
   RecyclerView patient_list_recyclerView;
   PatientListAdapter patientListAdapter;
   Query query;
-  CardView overview_cardview;
   SearchView patient_searchView;
   ImageView patientListMenuButton;
 
@@ -99,11 +97,7 @@ public class PatientListActivity extends BaseActivity {
     final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeToDeleteCallback);
     itemTouchHelper.attachToRecyclerView(patient_list_recyclerView);
 
-    overview_cardview = findViewById(R.id.patient_list_patient_overview);
     patient_searchView = findViewById(R.id.patient_list_searchView);
-    // this clicker is for test:
-    overview_cardview.setOnClickListener(
-        view -> startActivity(new Intent(PatientListActivity.this, CarePlanActivity.class)));
     final NavigationView navigationView = findViewById(R.id.nav_view);
     patientListMenuButton = findViewById(R.id.patient_list_menu_button);
     final DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
@@ -111,7 +105,26 @@ public class PatientListActivity extends BaseActivity {
 
     patientListMenuButton.setOnClickListener(
         v -> {
-          drawerLayout.openDrawer(GravityCompat.START);
+          if (null != drawerLayout) {
+            drawerLayout.openDrawer(GravityCompat.START);
+
+            navigationView.setNavigationItemSelectedListener(
+                menuItem -> {
+                  final int id = menuItem.getItemId();
+                  if (R.id.nav_home == id) {
+                    startActivity(new Intent(PatientListActivity.this, Homepage4caretaker.class));
+                  } else if (R.id.nav_admin == id) {
+                    startActivity(new Intent(PatientListActivity.this, Homepage4caretaker.class));
+                  } else if (R.id.nav_settings == id) {
+                    startActivity(new Intent(PatientListActivity.this, Setting.class));
+                  } else if (R.id.nav_signout == id) {
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(PatientListActivity.this, LoginActivity.class));
+                    finish();
+                  }
+                  return true;
+                });
+          }
         });
 
     final Query all_query = FirebaseDatabase.getInstance().getReference().child("patient_profile");
